@@ -1,12 +1,13 @@
 // Rocket prefab
 class Rocket extends Phaser.GameObjects.Sprite {
-    constructor(scene, x, y, texture, frame) {
+    constructor(scene, x, y, texture, frame, angle) {
         super(scene, x, y, texture, frame);
 
         scene.add.existing(this);   // add to existing, displayList, updateList
         this.isFiring = false;      // track rocket's firing status
         this.moveSpeed = 2;         // pixels per frame
         this.sfxRocket = scene.sound.add('sfx_rocket')  // add rocket sfx
+        this.angle = angle;
     }
 
     update() {
@@ -31,6 +32,12 @@ class Rocket extends Phaser.GameObjects.Sprite {
         }
         // if fired, move up
         if(this.isFiring && this.y >= borderUISize * 3 + borderPadding) {
+            if (this.angle != 0 && this.angle < 0) {
+                this.x -= this.moveSpeed;
+            }
+            if (this.angle != 0 && this.angle > 0) {
+                this.x += this.moveSpeed;
+            }
             this.y -= this.moveSpeed;
         }
         // reset on miss
