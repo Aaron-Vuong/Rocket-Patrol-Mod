@@ -1,3 +1,10 @@
+// Points Breakdown -----------
+//      Create a new spaceship type (w/ new artwork) that's smaller, moves faster, and is worth more points (20)
+//      Implement a new timing/scoring mechanism that adds time to the clock for successful hits (20)
+//      Implement mouse control for player movement and mouse click to fire (20)
+//      Use Phaser's particle emitter to create a particle explosion when the rocket hits the spaceship (20)
+//      Create and implement a new weapon (w/ new behavior and graphics) (20)
+//      Total = 100
 class Play extends Phaser.Scene {
     constructor() {
         super("playScene");
@@ -43,7 +50,8 @@ class Play extends Phaser.Scene {
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
 
-
+//      I referenced this video for particles.
+//      https://www.youtube.com/watch?v=JSrafZXuehQ&ab_channel=MitchellHudson
         this.particles = this.add.particles('particle');
         this.emitter = this.particles.createEmitter({
             x: 400,
