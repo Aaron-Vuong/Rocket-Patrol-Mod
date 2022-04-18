@@ -1,3 +1,5 @@
+// Aaron Vuong, Rocket Patrol Mod, April 18th 2022, About 2 hours
+
 let config = {
     type: Phaser.CANVAS,
     width: 640,
