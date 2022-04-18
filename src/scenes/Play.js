@@ -4,6 +4,7 @@
 //      Implement mouse control for player movement and mouse click to fire (20)
 //      Use Phaser's particle emitter to create a particle explosion when the rocket hits the spaceship (20)
 //      Create and implement a new weapon (w/ new behavior and graphics) (20)
+// --------------------------------------------------------------------------------
 //      Total = 100
 class Play extends Phaser.Scene {
     constructor() {
